@@ -8,7 +8,7 @@ import java.util.UUID;
 @Entity
 class Coffee {
     @Id
-    private final String id;
+    private String id; // we removed final, and added method setId // Still exception though
     private String name;
 
     public Coffee(String id, String name) {
@@ -24,9 +24,9 @@ class Coffee {
         return id;
     }
 
-//    public void setId(String id) { // Only if we will remove final from id
-//        this.id = id;
-//    }
+    public void setId(String id) { // Only if we will remove final from id
+        this.id = id;
+    }
 
     public String getName() {
         return name;
